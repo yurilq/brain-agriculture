@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Dashboard</h1>
+
+  <p><strong>Total de Fazendas:</strong> <span id="total_fazendas"></span></p>
+  <p><strong>Total de Hectares:</strong> <span id="total_hectares"></span></p>
+
+  <h3>Distribuição por Estado</h3>
+  <canvas id="estadoChart" width="400" height="200"></canvas>
+
+  <h3>Distribuição por Cultura</h3>
+  <canvas id="culturaChart" width="400" height="200"></canvas>
+
+  <h3>Uso do Solo</h3>
+  <canvas id="soloChart" width="400" height="200"></canvas>
+
+  <script>
+    async function carregarDados() {
+      const res = await fetch("http://localhost:8000/dashboard/resumo");
+      const data = await res.json();
+
+      document.getElementById("total_fazendas").textContent = data.total_fazendas;
+      document.getElementById("total_hectares").textContent = data.total_hectares;
+
+      new Chart(document.getElementById("estadoChart"), {
+        type: 'pie',
+        data: {
+          labels: data.por_estado.map(e => e.estado),
+          datasets: [{
+            label: 'Por Estado',
+            data: data.por_estado.map(e => e.total),
+          }]
+        }
+      });
+
+      new Chart(document.getElementById("culturaChart"), {
+        type: 'pie',
+        data: {
+          labels: data.por_cultura.map(e => e.cultura),
+          datasets: [{
+            label: 'Por Cultura',
+            data: data.por_cultura.map(e => e.total),
+          }]
+        }
+      });
+
+      new Chart(document.getElementById("soloChart"), {
+        type: 'pie',
+        data: {
+          labels: ['Agricultável', 'Vegetação'],
+          datasets: [{
+            label: 'Uso do Solo',
+            data: [
+              data.uso_solo.agricultavel,
+              data.uso_solo.vegetacao
+            ],
+          }]
+        }
+      });
+    }
+
+    carregarDados();
+  </script>
+</body>
+</html>
