@@ -31,7 +31,7 @@ docker compose up -d --build
 
 Aguarde até que o container do banco esteja com status healthy.
 
-3. Execute as migrações Alembic
+### 3. Execute as migrações Alembic
 
 docker compose exec app alembic upgrade head
 
@@ -59,9 +59,7 @@ A aplicação gera gráficos com base nos dados cadastrados.
 
 http://localhost:8000/static/dashboard_grafico.html
 ▶️ Ou consuma o JSON direto da API:
-bash
-Copiar
-Editar
+
 http://localhost:8000/dashboard/resumo
 O dashboard mostra:
 
