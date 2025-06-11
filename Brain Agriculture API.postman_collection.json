@@ -1,0 +1,673 @@
+{
+	"info": {
+		"_postman_id": "b696e8b0-63bd-4292-8368-68518af4c484",
+		"name": "Brain Agriculture API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "8183167"
+	},
+	"item": [
+		{
+			"name": "PRODUTOR",
+			"item": [
+				{
+					"name": "Adiciona_Produtor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Agro S.A.\",\n  \"documento\": \"12345678000195\",\n  \"tipo_documento\": \"cnpj\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/produtores/produtores/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"produtores",
+								"produtores",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar_Produtores",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/produtores/produtores/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"produtores",
+								"produtores",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar_Produtor",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/produtores/produtores/{{id_produtor}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"produtores",
+								"produtores",
+								"{{id_produtor}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar_Produtor",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"João da Silva Atualizado\",\n  \"documento\": \"12345678909\",\n  \"tipo_documento\": \"cpf\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/produtores/produtores/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"produtores",
+								"produtores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar_Produtor",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/produtores/produtores/{{id_produtor}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"produtores",
+								"produtores",
+								"{{id_produtor}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FAZENDAS",
+			"item": [
+				{
+					"name": "Adicionar_Fazenda",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"Fazenda Agua Limpa\",\n  \"cidade\": \"Guapo\",\n  \"estado\": \"GO\",\n  \"area_total\": 40,\n  \"area_agricultavel\": 20,\n  \"area_vegetacao\": 20,\n  \"produtor_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/fazendas/fazendas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"fazendas",
+								"fazendas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar_Fazendas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/fazendas/fazendas/\n",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"fazendas",
+								"fazendas",
+								"\n"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar_Fazenda",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/fazendas/fazendas/{{id_fazenda}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"fazendas",
+								"fazendas",
+								"{{id_fazenda}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar_Fazenda",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"string\",\n  \"cidade\": \"string\",\n  \"estado\": \"st\",\n  \"area_total\": 0,\n  \"area_agricultavel\": 0,\n  \"area_vegetacao\": 0,\n  \"produtor_id\": 0,\n  \"id\": 0\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/fazendas/fazendas/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"fazendas",
+								"fazendas",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar_Fazenda",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/fazendas/fazendas/{{id_fazenda}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"fazendas",
+								"fazendas",
+								"{{id_fazenda}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Safra",
+			"item": [
+				{
+					"name": "Adicionar_Safra",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ano_inicio\": \"2022-06-01\",\n  \"ano_fim\": \"2023-05-01\",\n  \"fazenda_id\": 1,\n  \"cultura_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/safras/safras/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"safras",
+								"safras",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar_Safra",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/safras/safras/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"safras",
+								"safras",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar_Safra",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ano_inicio\": \"2020-06-01\",\n  \"ano_fim\": \"2021-05-01\",\n  \"fazenda_id\": 1,\n  \"cultura_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/safras/safras/{{id_safra}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"safras",
+								"safras",
+								"{{id_safra}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar_Safra",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/safras/safras/{{id_safra}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"safras",
+								"safras",
+								"{{id_safra}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cultura",
+			"item": [
+				{
+					"name": "Adicionar_Cultura",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/culturas/culturas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"culturas",
+								"culturas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar_Cultura",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/culturas/culturas/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"culturas",
+								"culturas",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar_Cultura",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/culturas/culturas/{{id_Cultura}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"culturas",
+								"culturas",
+								"{{id_Cultura}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar_Cultura",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/culturas/culturas/{{id_Cultura}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"culturas",
+								"culturas",
+								"{{id_Cultura}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Dashboard",
+			"item": [
+				{
+					"name": "resumo_dashboard",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/dashboard/resumo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"dashboard",
+								"resumo"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id_produtor",
+			"value": "2"
+		},
+		{
+			"key": "id_fazenda",
+			"value": "1"
+		},
+		{
+			"key": "id_Cultura",
+			"value": "1"
+		},
+		{
+			"key": "id_safra",
+			"value": "3"
+		}
+	]
+}
